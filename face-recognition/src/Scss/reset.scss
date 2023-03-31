@@ -4,4 +4,101 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    font-family: 'SVN-Poppin', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #526484;
+}
+
+.flicker {
+    background-color: #a91403;
+    -webkit-border-radius: 10px;
+    border-radius: 50%;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+}
+@-webkit-keyframes glowing {
+    0% {
+        background-color: #7f1100;
+        -webkit-box-shadow: 0 0 3px #7f1100;
+    }
+    50% {
+        background-color: #ff3c00;
+        -webkit-box-shadow: 0 0 10px #ff3c00;
+    }
+    100% {
+        background-color: #7f1100;
+        -webkit-box-shadow: 0 0 3px #7f1100;
+    }
+}
+
+@-moz-keyframes glowing {
+    0% {
+        background-color: #7f1100;
+        -moz-box-shadow: 0 0 3px #7f1100;
+    }
+    50% {
+        background-color: #ff3c00;
+        -moz-box-shadow: 0 0 10px #ff3c00;
+    }
+    100% {
+        background-color: #7f1100;
+        -moz-box-shadow: 0 0 3px #7f1100;
+    }
+}
+
+@-o-keyframes glowing {
+    0% {
+        background-color: #7f1100;
+        box-shadow: 0 0 3px #7f1100;
+    }
+    50% {
+        background-color: #ff3c00;
+        box-shadow: 0 0 10px #ff3c00;
+    }
+    100% {
+        background-color: #7f1100;
+        box-shadow: 0 0 3px #7f1100;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        background-color: #7f1100;
+        box-shadow: 0 0 3px #7f1100;
+    }
+    50% {
+        background-color: #ff3c00;
+        box-shadow: 0 0 10px #ff3c00;
+    }
+    100% {
+        background-color: #7f1100;
+        box-shadow: 0 0 3px #7f1100;
+    }
+}
+
+.flicker {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+
+.btn-remote {
+    color: #fff;
+    margin: 0 10px 0 0;
+    background-color: #000;
+    box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }

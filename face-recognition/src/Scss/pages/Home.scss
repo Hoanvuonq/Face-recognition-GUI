@@ -1,43 +1,62 @@
 .home-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: block;
+    overflow: hidden;
     width: 100%;
+    margin: auto;
 
-    .gui {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 600px;
-        width: 800px;
-        border: 1px solid #000;
+    .gui-page {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
 
         .content-gui {
             display: flex;
-            width: 100%;
+            justify-content: center;
             align-items: center;
-            justify-content: space-around;
+            height: 100vh;
 
-            .content-right {
-                margin-right: 20px;
+            .content-left {
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                border: 5px solid #08080888;
+                min-width: 800px;
+                height: 600px;
 
-                img {
-                    width: 500px;
-                    height: 400px;
+                .content-oke {
+                    border: 5px solid #7d7b7b88;
+                    height: 100%;
+                    // border-radius: 20px;
+
+                    .content-left-head {
+                        margin-top: -38px;
+                        margin-left: -27px;
+                    }
+
+                    .content-left-camera {
+                        margin-top: 10px;
+                        height: 100%;
+                        img {
+                            width: 700px;
+                            height: 500px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .cottent-left-remote {
+                        width: 100%;
+                        margin-top: 15px;
+                        height: 0;
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
             }
-            .content-left {
-                display: flex;
-                flex-direction: column;
-                margin-right: 20px;
-
-                input {
-                    height: 30px;
-                    border: 0.8px solid #000;
-                    margin: 10px 0;
-                    text-indent: 5px;
-                }
+            .content-right {
+                border-radius: 20px;
+                margin-left: 18px;
+                padding: 20px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             }
         }
     }
