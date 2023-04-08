@@ -1,9 +1,13 @@
 @import './reset.scss';
-@import './mixin.scss';
+@import 'mixin.scss';
 @import './variables.scss';
 
-// Css Classes
 @import './pages/Home.scss';
+@import './pages/Login.scss';
+@import './pages/Register.scss';
+@import 'pages/UserInformation.scss';
+
 @import './Layouts/Clock.scss';
 @import './Layouts/UserInfor.scss';
-@import './Layouts/Navbar.scss';
+@import './Layouts/Header.scss';
+@import './Layouts/Design.scss';

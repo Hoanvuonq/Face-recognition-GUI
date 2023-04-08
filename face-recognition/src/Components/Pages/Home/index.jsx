@@ -1,43 +1,46 @@
-import React from 'react';
-import { Button } from 'antd';
-import { PlayCircleOutlined, PauseCircleOutlined, CheckCircleFilled, WarningFilled } from '@ant-design/icons';
+import React, { useState } from 'react';
 
-//Component
+// Component
 import UserInfor from '../../Layouts/UserInfor';
+import HeaderHome from '../../Layouts/Header';
+import Design from '../../Layouts/Design';
 import Camera from '../../Layouts/Camera';
 
-// Images
-import Face from '../../../Assets/img/face1.jpg';
+// Img
+import CameraImg from '../../../Assets/img/camera-open.svg';
 
 function Home() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isButtonVisible, setIsButtonVisible] = useState(true);
+
+    const handleButtonClick = () => {
+        setIsOpen(true);
+        setIsButtonVisible(false);
+    };
+
     return (
-        <div className="home-page">
-            <div className="gui-page">
-                <div className="content-gui">
-                    <div className="content-left">
-                        <div className="content-oke">
-                            <div className="content-left-head">
-                                <button className="flicker" />
-                            </div>
-                            <div className="content-left-camera">
-                                <img src={Face} alt="face" />
-                                {/* <Camera /> */}
-                            </div>
-                            <div className="cottent-left-remote">
-                                <div className="u-remote">
-                                    <Button className="btn-remote" icon={<PlayCircleOutlined />}></Button>
-                                    <Button className="btn-remote" icon={<PauseCircleOutlined />}></Button>
+        <>
+            <HeaderHome />
+            <section className="home-page">
+                <div className="bg-gra" />
+                <div className="home">
+                    <div className="content-home">
+                        <div className="content-left">
+                            {isButtonVisible && <img src={CameraImg} alt="camera" onClick={handleButtonClick} className={`open-camera ${isOpen ? 'fade-out' : ''}`} />}
+                            <div className={`camera ${isOpen ? 'open-camera-btn' : ''}`}>
+                                <div className="content-left-camera">
+                                    <Camera />
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="content-right">
-                        <UserInfor />
+                        <div className="content-right">
+                            <UserInfor />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <Design />
+            </section>
+        </>
     );
 }
 

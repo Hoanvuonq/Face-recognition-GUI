@@ -1,62 +1,149 @@
 .home-page {
-    display: block;
+    background-image: url(../../Assets/img/background-home.jpg);
+    padding-top: 100px;
+    padding-bottom: 6rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 10;
     overflow: hidden;
-    width: 100%;
-    margin: auto;
+    position: relative;
 
-    .gui-page {
-        display: block;
+    .home {
         width: 100%;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 16px;
+        padding-left: 16px;
 
-        .content-gui {
-            display: flex;
-            justify-content: center;
+        @media (min-width: 1320px) {
+            max-width: 1320px;
+        }
+
+        @media (max-width: 1140px) {
+            max-width: 1140px;
+            padding: 0 7px;
+        }
+
+        @media (max-width: 992px) {
+            max-width: 992px;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 768px;
+        }
+
+        @media (max-width: 575px) {
+            max-width: 575px;
+            padding: 0;
+        }
+
+        .content-home {
             align-items: center;
-            height: 100vh;
+            flex-wrap: wrap;
+            display: flex;
+            margin-left: -1rem;
+            margin-right: -1rem;
 
             .content-left {
-                border-radius: 20px;
-                padding: 40px;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-                border: 5px solid #08080888;
-                min-width: 800px;
-                height: 600px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                width: 100%;
 
-                .content-oke {
-                    border: 5px solid #7d7b7b88;
-                    height: 100%;
-                    // border-radius: 20px;
+                @include MinWidth992 {
+                    width: 64%;
+                }
 
-                    .content-left-head {
-                        margin-top: -38px;
-                        margin-left: -27px;
+                .camera {
+                    position: relative;
+                    margin-bottom: 3rem;
+                    border-radius: 50px;
+                    padding: 40px;
+                    display: none;
+                    height: 500px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        border-radius: 50px;
+                        padding: 30px;
+                        background: linear-gradient(45deg, #a50098, #632984);
+                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                        -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+                    }
+
+                    @include MinWidth992 {
+                        margin-bottom: 0px;
                     }
 
                     .content-left-camera {
-                        margin-top: 10px;
-                        height: 100%;
-                        img {
-                            width: 700px;
-                            height: 500px;
-                            margin-top: 5px;
-                        }
+                        background-color: transparent;
+                        width: 102%;
+                        height: 103%;
+                        margin-top: -6px;
+                        border-radius: 15px;
+                        margin-left: -8px;
                     }
+                }
 
-                    .cottent-left-remote {
-                        width: 100%;
-                        margin-top: 15px;
-                        height: 0;
-                        display: flex;
-                        justify-content: center;
+                .open-camera {
+                    cursor: pointer;
+                    display: inline-block;
+                    transition: opacity 0.5s ease-in-out;
+                    transition: transform 0.3s ease-in-out;
+                    margin-left: 140px;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        -webkit-transform: scale(1.05);
+                    }
+                }
+
+                .fade-out {
+                    animation: fade-out 0.5s ease-in-out;
+                    opacity: 0;
+                }
+                @keyframes fade-out {
+                    from {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
+                    }
+                }
+                .open-camera-btn {
+                    display: block;
+                    animation: slide-in 0.5s ease-in-out;
+                }
+
+                @keyframes slide-in {
+                    from {
+                        transform: translateX(-100%);
+                    }
+                    to {
+                        transform: translateX(0%);
                     }
                 }
             }
+
             .content-right {
-                border-radius: 20px;
-                margin-left: 18px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                width: 100%;
+                background: rgb(165, 79, 226);
+                background: linear-gradient(118deg, rgba(165, 79, 226, 1) 30%, rgba(255, 15, 242, 1) 68%);
+                height: 500px;
+                border-radius: 50px;
                 padding: 20px;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                flex-direction: column;
+                display: flex;
+
+                @include MinWidth992 {
+                    width: 35%;
+                }
             }
         }
     }

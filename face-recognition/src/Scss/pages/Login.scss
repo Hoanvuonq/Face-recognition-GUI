@@ -1,0 +1,281 @@
+.login-page {
+    background-image: url(../../Assets/img/background-home.jpg);
+    padding-top: 100px;
+    padding-bottom: 6rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+
+    .login {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 16px;
+        padding-left: 16px;
+
+        @include PC {
+            max-width: 1140px;
+        }
+
+        .content-login {
+            --tw-bg-opacity: 1;
+            background-color: rgb(44 44 57 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(77 76 90 / var(--tw-border-opacity));
+            border-width: 1px;
+            border-radius: 0.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .content-center {
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+                --tw-border-opacity: 1;
+                border-color: rgb(77 76 90 / var(--tw-border-opacity));
+                border-bottom-width: 1px;
+
+                @include MinWidth575 {
+                    padding: 60px;
+                }
+
+                h1 {
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 255 / var(--tw-text-opacity));
+                    font-weight: 700;
+                    font-size: 1.875rem;
+                    line-height: 2.25rem;
+                    text-align: center;
+                    margin-bottom: 0.5rem;
+                }
+
+                .title-note-login {
+                    --tw-text-opacity: 1;
+                    color: rgb(161 160 174 / var(--tw-text-opacity));
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+
+                .logo-content-login {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    margin-bottom: 2.25rem;
+
+                    .btn-logo-login {
+                        --tw-bg-opacity: 1;
+                        background-color: rgb(53 52 68 / var(--tw-bg-opacity));
+                        --tw-border-opacity: 1;
+                        border-color: rgb(77 76 90 / var(--tw-border-opacity));
+                        border-width: 1px;
+                        border-radius: 0.375rem;
+                        justify-content: center;
+                        align-items: center;
+                        width: 2.75rem;
+                        height: 2.75rem;
+                        display: flex;
+
+                        &:hover {
+                            --tw-bg-opacity: 1;
+                            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+                        }
+
+                        img {
+                            width: 21px;
+                            height: 21px;
+                        }
+
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            --tw-space-x-reverse: 0;
+                            margin-right: calc(1rem * var(--tw-space-x-reverse));
+                            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+                        }
+                    }
+                }
+                .title-sig-gmail {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    margin-bottom: 2rem;
+                    z-index: 10;
+                    position: relative;
+
+                    span {
+                        --tw-bg-opacity: 1;
+                        background-color: rgb(77 76 90 / var(--tw-bg-opacity));
+                        --tw-translate-y: -50%;
+                        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+                            scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+                        width: 100%;
+                        height: 1px;
+                        display: none;
+                        top: 50%;
+                        z-index: -10;
+                        left: 0px;
+                        position: absolute;
+
+                        @include MinWidth575 {
+                            display: block;
+                        }
+                    }
+
+                    .title-p {
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        --tw-text-opacity: 1;
+                        color: rgb(161 160 174 / var(--tw-text-opacity));
+                        --tw-bg-opacity: 1;
+                        background-color: rgb(44 44 57 / var(--tw-bg-opacity));
+
+                        @include MinWidth575 {
+                            padding-left: 1.25rem;
+                            padding-right: 1.25rem;
+                        }
+                    }
+                }
+
+                .cont-log {
+                    margin-bottom: 1.25rem;
+
+                    label {
+                        --tw-text-opacity: 1;
+                        color: rgb(255 255 255 / var(--tw-text-opacity));
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        display: block;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    input {
+                        transition-property: all;
+                        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                        transition-duration: 150ms;
+                        outline: 2px solid transparent;
+                        outline-offset: 2px;
+                        --tw-text-opacity: 1;
+                        color: rgb(161 160 174 / var(--tw-text-opacity));
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                        padding-top: 0.75rem;
+                        padding-bottom: 0.75rem;
+                        --tw-bg-opacity: 1;
+                        background-color: rgb(53 52 68 / var(--tw-bg-opacity));
+                        --tw-border-opacity: 1;
+                        border-color: rgb(77 76 90 / var(--tw-border-opacity));
+                        border-width: 1px;
+                        border-radius: 0.375rem;
+                        width: 100%;
+                    }
+                }
+                .cont-forgot {
+                    justify-content: space-between;
+                    margin-bottom: 2rem;
+
+                    @include MinWidth575 {
+                        display: flex;
+                    }
+
+                    .btn-checkout {
+                        margin-bottom: 1.25rem;
+                        position: relative;
+
+                        @include MinWidth575 {
+                            margin-bottom: 0px;
+                        }
+
+                        .lab-checkout {
+                            --tw-text-opacity: 1;
+                            color: rgb(161 160 174 / var(--tw-text-opacity));
+                            font-size: 1rem;
+                            line-height: 1.5rem;
+                            align-items: center;
+                            user-select: none;
+                            cursor: pointer;
+                            display: flex;
+                            font-weight: 500;
+
+                            .input-checkout {
+                                width: 18px;
+                                height: 18px;
+                                padding: 0;
+                                margin: -1px;
+                                overflow: hidden;
+                                clip: rect(0, 0, 0, 0);
+                                white-space: nowrap;
+                                border-width: 0;
+                                margin-right: 10px;
+                                margin-top: 7px;
+                            }
+                        }
+                    }
+
+                    .link-forgot {
+                        --tw-text-opacity: 1;
+                        color: rgb(161 160 174 / var(--tw-text-opacity));
+                        font-weight: 500;
+                        font-size: 1rem;
+                        line-height: 1.5rem;
+                        text-decoration: inherit;
+
+                        &:hover {
+                            --tw-text-opacity: 1;
+                            color: rgb(255 255 255 / var(--tw-text-opacity));
+                        }
+                    }
+                }
+
+                .btn-submit {
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 255 / var(--tw-text-opacity));
+                    font-weight: 600;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    padding: 0.75rem;
+                    background-color: rgb(81 66 252 / var(--tw-bg-opacity));
+                    border-radius: 0.375rem;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    &:hover {
+                        --tw-bg-opacity: 0.9;
+                    }
+                }
+
+                .title-footer {
+                    --tw-text-opacity: 1;
+                    color: rgb(161 160 174 / var(--tw-text-opacity));
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    padding: 1.5rem;
+
+                    .link-sign-up {
+                        --tw-text-opacity: 1;
+                        color: rgb(255 255 255 / var(--tw-text-opacity));
+                        text-decoration: inherit;
+                        margin-left: 5px;
+
+                        &:hover {
+                            --tw-text-opacity: 1;
+                            color: rgb(81 66 252 / var(--tw-text-opacity));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

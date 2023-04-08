@@ -1,0 +1,172 @@
+.user-infor-page {
+    background-image: url(../../Assets/img/background-home.jpg);
+    padding-top: 100px;
+    padding-bottom: 6rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+
+    .user-information {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
+        @media (min-width: 1320px) {
+            max-width: 1100px;
+        }
+
+        @media (max-width: 1140px) {
+            max-width: 1140px;
+            padding: 0 7px;
+        }
+
+        @media (max-width: 992px) {
+            max-width: 992px;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 768px;
+        }
+
+        @media (max-width: 575px) {
+            max-width: 575px;
+            padding: 0;
+        }
+        .user-infor-container {
+            --tw-bg-opacity: 1;
+            background: rgb(165, 79, 226);
+            background: linear-gradient(118deg, rgb(165, 79, 226) 30%, rgb(255, 15, 242) 68%);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            z-index: 10;
+            position: relative;
+
+            form {
+                padding: 2rem;
+
+                @include MinWidth575 {
+                    padding: 2.5rem;
+                }
+
+                .user-infor-content {
+                    flex-wrap: wrap;
+                    display: flex;
+                    margin-left: -1.25rem;
+                    margin-right: -1.25rem;
+
+                    @include MinWidth1140 {
+                        margin-left: -2rem;
+                        margin-right: -2rem;
+                    }
+
+                    .user-content-left {
+                        padding-right: 1.25rem;
+                        padding-left: 1.25rem;
+                        width: 100%;
+
+                        @include MinWidth1140 {
+                            padding-left: 2rem;
+                            padding-right: 2rem;
+                        }
+
+                        @include MinWidth992 {
+                            width: 41.666667%;
+                        }
+
+                        .inf-img {
+                            .img-user {
+                                width: 400px;
+                                height: 380px;
+                            }
+                        }
+                    }
+
+                    .user-content-right {
+                        padding-right: 1.25rem;
+                        padding-left: 1.25rem;
+                        width: 100%;
+
+                        @include MinWidth1140 {
+                            padding-left: 2rem;
+                            padding-right: 2rem;
+                        }
+
+                        @include MinWidth992 {
+                            width: 58.333333%;
+                        }
+
+                        .inf-title {
+                            font-family: 'Montserrat', sans-serif !important;
+                            color: #fff;
+                            text-align: center;
+                            font-size: 21px;
+                            font-weight: 800;
+                        }
+
+                        // .inf-name {
+                        //     margin-bottom: 1.25rem;
+
+                        //     .lab-name {
+                        //         --tw-text-opacity: 1;
+                        //         color: rgb(255 255 255 / var(--tw-text-opacity));
+                        //         font-weight: 500;
+                        //         font-size: 1rem;
+                        //         line-height: 1.5rem;
+                        //         display: block;
+                        //         margin-bottom: 0.5rem;
+                        //     }
+
+                        //     .inp-name {
+                        //         transition-property: all;
+                        //         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                        //         transition-duration: 150ms;
+                        //         outline: 2px solid transparent;
+                        //         outline-offset: 2px;
+                        //         --tw-text-opacity: 1;
+                        //         color: #fff;
+                        //         font-weight: 500;
+                        //         font-size: 1rem;
+                        //         line-height: 1.5rem;
+                        //         padding-left: 1.5rem;
+                        //         padding-right: 1.5rem;
+                        //         padding-top: 0.75rem;
+                        //         padding-bottom: 0.75rem;
+                        //         --tw-bg-opacity: 1;
+                        //         background-color: rgb(53 52 68 / var(--tw-bg-opacity));
+                        //         --tw-border-opacity: 1;
+                        //         border-color: rgb(77 76 90 / var(--tw-border-opacity));
+                        //         border-width: 1px;
+                        //         border-radius: 0.375rem;
+                        //         width: 100%;
+                        //     }
+
+                        // }
+                        table {
+                            width: 100%;
+                            color: #fff;
+                            font-family: 'Montserrat', sans-serif !important;
+                            font-weight: 600;
+                            font-size: 16px;
+                            padding: 40px;
+
+                            tbody {
+                                tr {
+                                    // display: flex;
+
+                                    td {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

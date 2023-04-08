@@ -9,11 +9,11 @@ $desktop-width: 1024px;
 $screen-width: 1440px;
 $desktopMin-width: 1800px;
 $desktopMax-width: 2560px;
-$max-width-992: 992px;
-$max-width-420: 420px;
-$max-width-425: 425px;
-$max-width-375: 375px;
-$max-width-320: 320px;
+$max-width-1320: 1320px;
+$max-width-1140: 1140px;
+$min-width-992: 992px;
+$min-width-575: 575px;
+$min-width-768: 768px;
 
 /* PC */
 @mixin PC {
@@ -40,8 +40,32 @@ $max-width-320: 320px;
     }
 }
 
-@mixin MaxWidth992 {
-    @media (max-width: #{$max-width-992}) {
+@mixin MinWidth1320 {
+    @media (min-width: #{$max-width-1320}) {
+        @content;
+    }
+}
+
+@mixin MinWidth1140 {
+    @media (min-width: #{$max-width-1140}) {
+        @content;
+    }
+}
+
+@mixin MinWidth992 {
+    @media (min-width: #{$min-width-992}) {
+        @content;
+    }
+}
+
+@mixin MinWidth575 {
+    @media (min-width: #{$min-width-575}) {
+        @content;
+    }
+}
+
+@mixin MinWidth768 {
+    @media (min-width: #{$min-width-768}) {
         @content;
     }
 }

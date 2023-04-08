@@ -1,0 +1,25 @@
+.design {
+    opacity: 0.2;
+    display: flex;
+    z-index: -10;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+
+    .desn-spn {
+        --tw-gradient-from: #fff;
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+        background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+        width: 1.1px;
+        height: 100%;
+        --tw-gradient-to: transparent;
+        display: none;
+
+        @include MinWidth992 {
+            display: flex;
+        }
+    }
+}

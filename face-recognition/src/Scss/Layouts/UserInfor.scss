@@ -1,12 +1,14 @@
 .time {
     position: absolute;
-    font-size: 14px;
-    margin-top: -2px;
+    font-size: 12px;
+    margin-top: -16px;
+    font-weight: 600;
 }
 
 .user-infor {
     display: flex;
-    // justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 10px;
 
     .user-img {
         img {
@@ -22,21 +24,18 @@
         font-size: 14px;
         font-weight: 600;
         margin-left: 15px;
-        width: 170px;
     }
 
     .notify-success {
-        align-items: center;
-        display: flex;
-        margin-left: 31px;
         color: #39e915;
         font-size: 20px;
+        margin-top: 48px;
+        display: inline-block;
     }
     .notify-error {
-        align-items: center;
-        display: flex;
-        margin-left: 31px;
         color: #e91c15;
         font-size: 20px;
+        margin-top: 48px;
+        display: inline-block;
     }
 }

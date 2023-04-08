@@ -1,41 +1,21 @@
-import React, { useRef, useState } from 'react';
-import Webcam from 'react-webcam';
-import RecordRTC from 'recordrtc';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Camera = () => {
-    const webcamRef = useRef(null);
-    const [recording, setRecording] = useState(false);
-    const [videoURL, setVideoURL] = useState('');
+    const [Video, setVideo] = useState('');
 
-    const startRecording = () => {
-        setRecording(true);
-        const options = {
-            mimeType: 'video/webm',
-            audioBitsPerSecond: 128000,
-            videoBitsPerSecond: 128000,
-            bitsPerSecond: 256000,
+    useEffect(() => {
+        const fetchData = async () => {
+            const headers = {
+                'Content-Type': 'application/json',
+            };
+            const result = await axios.get('http://localhost:5000/video_feed', { headers });
+            setVideo(result.data);
         };
-        const recorder = RecordRTC(webcamRef.current.stream, options);
-        recorder.startRecording();
-        setTimeout(() => {
-            recorder.stopRecording(() => {
-                const blob = recorder.getBlob();
-                setVideoURL(URL.createObjectURL(blob));
-            });
-        }, 5000);
-    };
+        fetchData();
+    }, []);
 
-    return (
-        <div>
-            <Webcam audio={false} ref={webcamRef} />
-            <button onClick={startRecording}>Quay video</button>
-            {videoURL && (
-                <video controls>
-                    <source src={videoURL} type="video/webm" />
-                </video>
-            )}
-        </div>
-    );
+    return <video style={{ width: '738px', height: '432px' }} src={`data:image/jpeg;base64,${Video}`} alt="camera feed" />;
 };
 
 export default Camera;
