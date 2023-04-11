@@ -79,7 +79,7 @@
                         right: 1rem;
                         position: absolute;
 
-                        @include MinWidth992 {
+                        @media (min-width: 992px) {
                             display: none;
                         }
 

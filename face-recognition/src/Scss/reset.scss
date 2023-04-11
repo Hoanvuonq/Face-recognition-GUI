@@ -15,6 +15,9 @@ body {
     margin: 0;
     line-height: inherit;
 }
+a {
+    text-decoration: none;
+}
 
 .bg-gra {
     background: linear-gradient(180deg, rgba(20, 20, 32, 0.65) 0%, #141420 100%);
@@ -24,6 +27,36 @@ body {
     left: 0px;
     top: 0px;
     position: absolute;
+}
+
+.zone {
+    width: 105%;
+    height: 105%;
+    border: 10px solid;
+    border-image: linear-gradient(45deg, #a50098, #632984) 10;
+    margin-top: -11px;
+    margin-left: -13.5px;
+}
+
+.inp-id {
+    position: absolute;
+    margin-top: -30px;
+
+    .style-inp {
+        background: #632984 !important;
+        color: #fff !important;
+        font-weight: 600;
+        border-radius: 20px;
+        // border: 1px solid;
+        text-indent: 14px;
+
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: #fff !important;
+        }
+    }
 }
 
 *,
@@ -179,6 +212,9 @@ h6 {
     padding: 5px 5px;
     text-align: center;
     text-decoration: none;
+    position: absolute;
+    margin-top: -22px;
+    margin-left: 206px;
 }
 @-webkit-keyframes glowing {
     0% {

@@ -16,7 +16,7 @@ function Login() {
         <>
             <HeaderHome />
             <section className="login-page">
-                <div className="bg-gra" />
+                {/* <div className="bg-gra" /> */}
                 <div className="login">
                     <div className="content-login">
                         <div className="content-center">
@@ -61,7 +61,9 @@ function Login() {
                                     </Link>
                                 </div>
 
-                                <button className="btn-submit">Signin</button>
+                                <Link className="link-btn-sig" to={'/Home'}>
+                                    <button className="btn-submit">Sign in</button>
+                                </Link>
                             </form>
 
                             <p className="title-footer">

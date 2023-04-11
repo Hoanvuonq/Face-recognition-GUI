@@ -18,7 +18,6 @@ function Register() {
         <>
             <HeaderHome />
             <section className="login-page">
-                <div className="bg-gra" />
                 <div className="login">
                     <div className="content-login">
                         <div className="content-center">

@@ -1,0 +1,44 @@
+.extension-page {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+    .extension-container {
+        background: #26ad22;
+        width: 400px;
+        height: 600px;
+        .extension-content {
+            color: #fff;
+            font-size: 20px;
+
+            ul {
+                text-align: center;
+                padding-top: 20px;
+                li {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}
+
+.btn-oke {
+    background-color: #26ad22;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: inline-block;
+    transition: opacity 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    &:active {
+        background-color: #152515;
+    }
+    &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+    }
+}

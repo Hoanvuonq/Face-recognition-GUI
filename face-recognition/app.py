@@ -4,9 +4,8 @@ import cv2
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5000"])
+CORS(app, origins=["http://localhost:3000"])
 
-app = Flask(__name__)
 
 camera = cv2.VideoCapture(0)  # use 0 for web camera
 #  for cctv camera use rtsp://username:password@ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp' instead of camera

@@ -9,21 +9,23 @@ import Login from './Components/Pages/Login';
 import Register from './Components/Pages/Register';
 import UserInformation from './Components/Pages/UserInformation';
 import Clock from './Components/Layouts/Clock';
-import Camera from './Components/Layouts/Camera';
+import CameraDisplay from './Components/Layouts/CameraDisplay';
 import UserInfor from './Components/Layouts/UserInfor';
+import Extension from './Components/Layouts/Extension';
 
 function App() {
     return (
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/Login" element={<Login />} />
+                    <Route exact path="/Home" element={<Home />} />
+                    <Route exact path="/" element={<Login />} />
                     <Route exact path="/Register" element={<Register />} />
                     <Route exact path="/UserInformation" element={<UserInformation />} />
-                    <Route exact path="Clock" element={<Clock />} />
-                    <Route exact path="Camera" element={<Camera />} />
-                    <Route exact path="UserInfor" element={<UserInfor />} />
+                    <Route exact path="/Clock" element={<Clock />} />
+                    <Route exact path="/CameraDisplay" element={<CameraDisplay />} />
+                    <Route exact path="/UserInfor" element={<UserInfor />} />
+                    <Route exact path="/Extension" element={<Extension />} />
                 </Routes>
             </Fragment>
         </BrowserRouter>
