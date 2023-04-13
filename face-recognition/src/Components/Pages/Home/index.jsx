@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 // Component
 import UserInfor from '../../Layouts/UserInfor';
 import HeaderHome from '../../Layouts/Header';
@@ -21,6 +20,7 @@ function Home() {
     return (
         <>
             <HeaderHome />
+
             <section className="home-page">
                 <div className="home">
                     <div className="content-home">
