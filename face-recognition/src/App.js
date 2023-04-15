@@ -12,6 +12,7 @@ import Clock from './Components/Layouts/Clock';
 import CameraDisplay from './Components/Layouts/CameraDisplay';
 import UserInfor from './Components/Layouts/UserInfor';
 import AddUser from './Components/Pages/AddUser';
+import ListUser from './Components/Pages/ListUser';
 import Extension from './Components/Layouts/Extension';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                     <Route exact path="/CameraDisplay" element={<CameraDisplay />} />
                     <Route exact path="/UserInfor" element={<UserInfor />} />
                     <Route exact path="/AddUser" element={<AddUser />} />
+                    <Route exact path="/ListUser" element={<ListUser />} />
                     <Route exact path="/Extension" element={<Extension />} />
                 </Routes>
             </Fragment>

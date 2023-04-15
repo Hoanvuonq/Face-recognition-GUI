@@ -1,22 +1,16 @@
 // import React, { useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HeaderHome from '../../Layouts/Header';
+// import HeaderHome from '../../Layouts/Header';
 
 import Google from '../../../Assets/img/google.png';
 import Facebook from '../../../Assets/img/facebook.png';
 import Twitter from '../../../Assets/img/twitter.png';
 
 function Register() {
-    // const [isChecked, setIsChecked] = useState(false);
-
-    // function handleCheckboxChange() {
-    //     setIsChecked(!isChecked);
-    // }
-
     return (
         <>
-            <HeaderHome />
+            {/* <HeaderHome /> */}
             <section className="login-page">
                 <div className="login">
                     <div className="content-login">
@@ -42,7 +36,7 @@ function Register() {
                                 <div className="cont-log email-login">
                                     <label htmlFor="email">Email</label>
                                     <input className="input-email" type="email" name="email" id="email" placeholder="Enter your email" />
-                                </div>{' '}
+                                </div>
                                 <div className="cont-log email-login">
                                     <label htmlFor="email">Username</label>
                                     <input className="input-email" type="email" name="email" id="email" placeholder="Enter your username" />
@@ -56,7 +50,7 @@ function Register() {
 
                             <p className="title-footer">
                                 Don't you have an account?
-                                <Link to={'/Login'} className="link-sign-up">
+                                <Link to={'/'} className="link-sign-up">
                                     Sign in
                                 </Link>
                             </p>

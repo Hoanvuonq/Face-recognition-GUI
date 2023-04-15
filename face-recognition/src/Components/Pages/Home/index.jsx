@@ -20,7 +20,6 @@ function Home() {
     return (
         <>
             <HeaderHome />
-
             <section className="home-page">
                 <div className="home">
                     <div className="content-home">

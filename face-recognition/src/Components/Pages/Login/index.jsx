@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import HeaderHome from '../../Layouts/Header';
+// import HeaderHome from '../../Layouts/Header';
 
 import Google from '../../../Assets/img/google.png';
 import Facebook from '../../../Assets/img/facebook.png';
@@ -14,9 +14,8 @@ function Login() {
     }
     return (
         <>
-            <HeaderHome />
+            {/* <HeaderHome /> */}
             <section className="login-page">
-                {/* <div className="bg-gra" /> */}
                 <div className="login">
                     <div className="content-login">
                         <div className="content-center">

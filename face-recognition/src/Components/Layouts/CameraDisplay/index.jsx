@@ -22,7 +22,6 @@ const CameraDisplay = () => {
             <button className="flicker"></button>
             <iframe
                 style={{ width: '100%', height: '100%' }}
-                // src="http://192.168.1.6:8081/video"
                 src={`http://${ip}`}
                 title="Ip Adress"
                 scrolling="no"

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment'; // or import { DateTime } from "luxon";
+import moment from 'moment';
 
 function Clock() {
-    const [time, setTime] = useState(moment()); // or useState(DateTime.local());
+    const [time, setTime] = useState(moment());
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTime(moment()); // or setTime(DateTime.local());
+            setTime(moment());
         }, 1000);
 
         return () => clearInterval(interval);

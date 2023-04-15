@@ -95,7 +95,12 @@
                                 .img-upload-success {
                                     height: 480px;
                                     width: 375px;
+                                    border-radius: 0.5rem;
                                     object-fit: cover;
+                                    // --tw-border-opacity: 1;
+                                    // border-color: rgb(161 160 174 / var(--tw-border-opacity));
+                                    // border-style: dashed;
+                                    // border-width: 1px;
                                 }
 
                                 .btn-change {

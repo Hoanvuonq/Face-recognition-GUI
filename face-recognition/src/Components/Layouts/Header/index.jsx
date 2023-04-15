@@ -48,10 +48,10 @@ function HeaderHome() {
                                             <Link to={'/Home'}>Home</Link>
                                         </li>
                                         <li>
-                                            <Link to="#">About</Link>
+                                            <Link to={'/ListUser'}>List User</Link>
                                         </li>
                                         <li>
-                                            <Link to={'/UserInformation'}>Infor User</Link>
+                                            <Link to={'/AddUser'}>Add User</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -62,7 +62,7 @@ function HeaderHome() {
                                         <SearchOutlined className="icon-search" />
                                     </button>
                                 </div>
-                                <Link to={'/Login'} className="login">
+                                <Link to={'/'} className="login">
                                     Login
                                 </Link>
                             </div>
