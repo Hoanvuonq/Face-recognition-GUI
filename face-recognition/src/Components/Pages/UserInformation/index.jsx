@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeaderHome from '../../Layouts/Header';
+import { getUserById } from '../../../api/api';
 
 //img
 import Salmon from '../../../Assets/img/salmon.png';
 
-function UserInformation() {
+const UserInformation = ({ navigateToUser }) => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const data = await getUserById();
+            setUsers(data);
+        };
+        fetchUsers();
+    }, []);
+
     return (
         <>
             <HeaderHome />
@@ -20,33 +31,26 @@ function UserInformation() {
                                 </div>
                                 <div className="user-content-right">
                                     <div className="inf-title">Infor User</div>
-
                                     <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Skill</th>
+                                                <th>Active</th>
+                                                <th>Added</th>
+                                            </tr>
+                                        </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Full Name</td>
-                                                <td>Salmon</td>
-                                            </tr>
-                                            <tr>
-                                                <td>ID</td>
-                                                <td>999999</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sex</td>
-                                                <td>Male</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Position</td>
-                                                <td>Dev</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Time</td>
-                                                <td>18:33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Innitiated Date</td>
-                                                <td>13-4-2023</td>
-                                            </tr>
+                                            {users.map((user) => (
+                                                <tr key={user.prs_nbr} onClick={() => navigateToUser(user.prs_nbr)}>
+                                                    <td>{user.prs_nbr}</td>
+                                                    <td>{user.prs_name}</td>
+                                                    <td>{user.prs_skill}</td>
+                                                    <td>{user.prs_active ? 'Yes' : 'No'}</td>
+                                                    <td>{user.prs_added}</td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
@@ -57,6 +61,6 @@ function UserInformation() {
             </section>
         </>
     );
-}
+};
 
 export default UserInformation;
