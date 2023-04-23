@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HeaderHome from '../../Layouts/Header';
+import { Link } from 'react-router-dom';
 import { Button, Table } from 'antd';
 import { getUsers } from '../../../api/api';
 
@@ -35,6 +36,11 @@ function ListUser() {
         {
             title: 'Added',
             dataIndex: 'added',
+        },
+        {
+            title: 'Action',
+            key: 'action',
+            render: (text, record) => <Link to={`/UserInfor/${record.id}`}>Detail</Link>,
         },
     ];
 

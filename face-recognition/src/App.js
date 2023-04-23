@@ -23,7 +23,7 @@ function App() {
                     <Route exact path="/Home" element={<Home />} />
                     <Route exact path="/" element={<Login />} />
                     <Route exact path="/Register" element={<Register />} />
-                    <Route exact path="/UserInformation" element={<UserInformation />} />
+                    <Route exact path="/UserInfor/:id" element={<UserInformation />} />
                     <Route exact path="/Clock" element={<Clock />} />
                     <Route exact path="/CameraDisplay" element={<CameraDisplay />} />
                     <Route exact path="/UserInfor" element={<UserInfor />} />

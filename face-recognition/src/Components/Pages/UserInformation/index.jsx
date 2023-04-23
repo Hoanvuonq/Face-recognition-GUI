@@ -1,20 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import HeaderHome from '../../Layouts/Header';
-import { getUserById } from '../../../api/api';
+import { useParams } from 'react-router-dom';
+import { getUserInfo } from '../../../api/api';
 
 //img
 import Salmon from '../../../Assets/img/salmon.png';
 
-const UserInformation = ({ navigateToUser }) => {
-    const [users, setUsers] = useState([]);
+const UserInformation = () => {
+    const { id } = useParams(); // lấy user id từ url params
+    const [userInfo, setUserInfo] = useState(null);
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            const data = await getUserById();
-            setUsers(data);
+        const fetchUser = async () => {
+            try {
+                const userData = await getUserInfo(id);
+                console.log(userData);
+                console.log(id);
+                setUserInfo(userData);
+            } catch (error) {
+                console.error(error);
+            }
         };
-        fetchUsers();
-    }, []);
+        fetchUser();
+    }, [id]);
+    console.log(userInfo);
+    if (!userInfo) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <>
@@ -31,28 +43,16 @@ const UserInformation = ({ navigateToUser }) => {
                                 </div>
                                 <div className="user-content-right">
                                     <div className="inf-title">Infor User</div>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Skill</th>
-                                                <th>Active</th>
-                                                <th>Added</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {users.map((user) => (
-                                                <tr key={user.prs_nbr} onClick={() => navigateToUser(user.prs_nbr)}>
-                                                    <td>{user.prs_nbr}</td>
-                                                    <td>{user.prs_name}</td>
-                                                    <td>{user.prs_skill}</td>
-                                                    <td>{user.prs_active ? 'Yes' : 'No'}</td>
-                                                    <td>{user.prs_added}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+
+                                    {userInfo && (
+                                        <div className="info-user">
+                                            <div className="title-in4">ID: {id}</div>
+                                            <div className="title-in4">Name: {userInfo.data.name}</div>
+                                            <div className="title-in4">Skill: {userInfo.data.skill}</div>
+                                            <div className="title-in4">Active: {userInfo.data.active}</div>
+                                            <div className="title-in4">Added: {userInfo.data.added}</div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </form>

@@ -38,6 +38,149 @@ a {
     margin-left: -13.5px;
 }
 
+// Design của Yuno :)))
+.design-btn,
+.btn-design {
+    border-radius: 12px;
+    display: flex;
+}
+
+.design-btn {
+    padding: 4px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cebfb1+0,ebe3dd+100 */
+    background: #cebfb1; /* Old browsers */
+    background: -moz-linear-gradient(top, #cebfb1 0%, #ebe3dd 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #cebfb1 0%, #ebe3dd 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        #cebfb1 0%,
+        #ebe3dd 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebfb1', endColorstr='#ebe3dd',GradientType=0 ); /* IE6-9 */
+    border-radius: 16px;
+    opacity: 0.9;
+    border: solid 1px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 -10px 10px 10px -8px rgba(255, 255, 255, 0.9);
+    margin: 3px;
+    width: 55px;
+    height: 55px;
+
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    .btn-design {
+        background: #dcd9d4;
+        min-width: 45px;
+        min-height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(49, 34, 22, 0.3);
+        cursor: pointer;
+        font-weight: 900;
+        transition: 0.2s ease-in;
+        box-shadow: inset 0 3px 2px 0 rgba(49, 34, 22, 0.07), inset 0 6px 3px 0 rgba(255, 255, 255, 0.8),
+            inset 0 -4.5px 3.5px 0 rgba(165, 145, 131, 0.75), inset 0 -5px 3px -2px rgba(255, 255, 255, 0.4),
+            inset 8px 0 4px -2px rgba(165, 145, 131, 0.8), inset -9px 0 3px -2px rgba(255, 255, 255, 0.4),
+            0 4px 4px -1px rgba(49, 34, 22, 0.5), 0 8px 6px -3px rgba(49, 34, 22, 0.3);
+    }
+}
+#on-off:checked ~ label .btn-design {
+    box-shadow: inset 0 4px 2px 0 rgba(49, 34, 22, 0.16), inset 0 5px 3px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -4.5px 3.5px 0 rgba(178, 152, 134, 0.4), inset 0 -5px 3px -2px rgba(255, 255, 255, 0.4),
+        inset 8px 0 4px -2px rgba(255, 255, 255, 0.5), inset -9px 0 3px -2px rgba(255, 255, 255, 0.3),
+        0 3px 2px -1px rgba(178, 152, 134, 0.7), 0 -4px 4px 0 rgba(49, 34, 22, 0.05);
+}
+.notification {
+    position: fixed;
+    right: 0;
+    z-index: 9;
+
+    .toast {
+        position: relative;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 400px;
+        display: grid;
+        grid-template-columns: 70px 1fr 70px;
+        border-radius: 5px;
+        animation: show 0.3s ease 1 forwards;
+
+        .content-notify {
+            .title-notify {
+                font-size: x-large;
+                font-weight: bold;
+            }
+            .span-title-notify {
+                opacity: 0.6;
+                font-weight: 600;
+            }
+        }
+
+        .img-notify {
+            margin-top: 18px;
+            width: 22px;
+        }
+    }
+    .success {
+        --success: #0abf30;
+        color: var(--success);
+        background-image: linear-gradient(to right, #0abf30, #22242f 30%);
+
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: var(--success);
+            width: 100%;
+            height: 3px;
+            content: '';
+            box-shadow: 0 0 10px var(--success);
+            animation: timeOut 2s linear 1 forwards;
+        }
+    }
+
+    .error {
+        --error: #ff0200;
+        color: var(--error);
+        background-image: linear-gradient(to right, #b70c0c, #22242f 30%);
+
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: var(--error);
+            width: 100%;
+            height: 3px;
+            content: '';
+            box-shadow: 0 0 10px var(--error);
+            animation: timeOut 2s linear 1 forwards;
+        }
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-5%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes timeOut {
+    to {
+        width: 0%;
+    }
+}
+
 .inp-id {
     position: absolute;
     margin-top: -30px;

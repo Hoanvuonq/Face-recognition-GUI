@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import HeaderHome from '../../Layouts/Header';
 import UploadFile from '../../../Assets/img/upload-file.png';
 import ChangeImg from '../../../Assets/img/change.png';
+import SuccessIMG from '../../../Assets/img/success.png';
+import ErrorIMG from '../../../Assets/img/error.png';
 import { addNewUser, submitNewUser } from '../../../api/api';
 
 const AddUser = () => {
@@ -14,13 +16,15 @@ const AddUser = () => {
     const [skillError, setSkillError] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [idFetched, setIdFetched] = useState(false);
     const navigate = useNavigate();
 
     const handleAddUser = async () => {
         try {
             const newNbr = await addNewUser();
             console.log('newnbr:', newNbr);
-            setNewUser({ ...newUser, txtnbr: newNbr }); // set giá trị txtnbr sau khi newNbr được trả về
+            setNewUser({ ...newUser, txtnbr: newNbr });
+            setIdFetched(true);
         } catch (error) {
             console.log(error);
         }
@@ -38,6 +42,9 @@ const AddUser = () => {
                 await submitNewUser(newUser);
                 setSuccess(true);
                 setError(false);
+                setTimeout(() => {
+                    navigate(`/UserInfor/${newUser.txtnbr}`);
+                }, 2000);
             } catch (error) {
                 console.log(error);
                 setSuccess(false);
@@ -48,14 +55,18 @@ const AddUser = () => {
 
     useEffect(() => {
         let timerId;
-        if (success) {
+        if (success && !idFetched) {
             timerId = setTimeout(() => {
-                navigate('/userinformation');
+                setSuccess(false);
+            }, 2000);
+        } else if (error) {
+            timerId = setTimeout(() => {
+                setError(false);
             }, 2000);
         }
 
         return () => clearTimeout(timerId);
-    }, [success]);
+    }, [success, error, idFetched]);
 
     //Upload img
     const handleImageChange = (e) => {
@@ -75,13 +86,25 @@ const AddUser = () => {
                 <div className="user-information">
                     <div className="user-infor-container">
                         {error && (
-                            <div className="alert alert-danger" role="alert">
-                                Failed to add user
+                            <div className="notification">
+                                <div className="toast error">
+                                    <img src={ErrorIMG} alt="Error" />
+                                    <div className="content-notify">
+                                        <div className="title-notify">Error</div>
+                                        <span className="span-title-notify">This is a error</span>
+                                    </div>
+                                </div>
                             </div>
                         )}
                         {success && (
-                            <div className="alert alert-success" role="alert">
-                                User added successfully
+                            <div className="notification">
+                                <div className="toast success">
+                                    <img src={SuccessIMG} alt="Success" />
+                                    <div className="content-notify">
+                                        <div className="title-notify">Success</div>
+                                        <span className="span-title-notifi">This is a success</span>
+                                    </div>
+                                </div>
                             </div>
                         )}
 
@@ -128,6 +151,20 @@ const AddUser = () => {
                                 </div>
                                 <div className="user-content-right">
                                     <div className="inf-title">Add User</div>
+                                    <div className=" inf-name">
+                                        <label htmlFor="txtname" className="lab-name">
+                                            Name
+                                            <input
+                                                type="text"
+                                                className="inp-name"
+                                                id="txtname"
+                                                name="txtname"
+                                                value={newUser.txtname}
+                                                onChange={(e) => setNewUser({ ...newUser, txtname: e.target.value })}
+                                            />
+                                            {nameError && <span className="error">{nameError}</span>}
+                                        </label>
+                                    </div>
                                     <div className="inf-id-s-add">
                                         <div className="inf-id inf-name">
                                             <label htmlFor="txtnbr" className="lab-name lab-id">
@@ -142,22 +179,7 @@ const AddUser = () => {
                                                 />
                                             </label>
                                         </div>
-                                        <div className="inf-id inf-name">
-                                            <label htmlFor="txtname" className="lab-name">
-                                                Name
-                                                <input
-                                                    type="text"
-                                                    className="inp-name"
-                                                    id="txtname"
-                                                    name="txtname"
-                                                    value={newUser.txtname}
-                                                    onChange={(e) =>
-                                                        setNewUser({ ...newUser, txtname: e.target.value })
-                                                    }
-                                                />
-                                                {nameError && <span className="error">{nameError}</span>}
-                                            </label>
-                                        </div>
+
                                         <div className="inf-id inf-name">
                                             <label htmlFor="optskill" className="lab-name lab-id">
                                                 Kill
@@ -180,10 +202,15 @@ const AddUser = () => {
                                         </div>
                                     </div>
 
+                                    <div className="design-btn">
+                                        <input type="checkbox" name="on-off" id="on-off" />
+                                        <label htmlFor="on-off">
+                                            <div className="btn-design" onClick={handleAddUser}>
+                                                ID
+                                            </div>
+                                        </label>
+                                    </div>
                                     <div className="connected">
-                                        <button type="button" className="btn-connecting" onClick={handleAddUser}>
-                                            Get ID
-                                        </button>
                                         <button type="submit" className="btn-connecting">
                                             Add User
                                         </button>

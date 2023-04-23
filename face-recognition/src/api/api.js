@@ -40,15 +40,19 @@ export async function getUsers() {
         'Content-Type': 'application/json',
     };
     const data = await axios.post(url, data_send, { headers });
-    // console.log(data);
     return data;
 }
 
-export async function getUserById(id) {
-    const url = `${API_URL}/${id}`;
+export const getUserInfo = async (userId) => {
+    const url = `${API_URL}/user/${userId}`;
     const headers = {
         'Content-Type': 'application/json',
     };
-    const { data } = await axios.get(url, { headers });
-    return data;
-}
+    try {
+        const response = await axios.get(url, { headers });
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
