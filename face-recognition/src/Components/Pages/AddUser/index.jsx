@@ -16,7 +16,7 @@ const AddUser = () => {
     const [skillError, setSkillError] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
-    const [idFetched, setIdFetched] = useState(false);
+    const [isIdFetched, setIdFetched] = useState(false);
     const navigate = useNavigate();
 
     const handleAddUser = async () => {
@@ -33,17 +33,25 @@ const AddUser = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!isIdFetched) {
+            setError(true);
+            return;
+        }
+
         if (!newUser.txtname) {
             setNameError('Please enter a name');
         } else if (!newUser.optskill) {
             setSkillError('Please select a skill');
+        } else if (!newUser.txtnbr) {
+            setError(true);
         } else {
             try {
                 await submitNewUser(newUser);
                 setSuccess(true);
                 setError(false);
                 setTimeout(() => {
-                    navigate(`/UserInfor/${newUser.txtnbr}`);
+                    // navigate(`/UserInfor/${newUser.txtnbr}`);
+                    navigate(`/TrainIMG/${newUser.txtnbr}`);
                 }, 2000);
             } catch (error) {
                 console.log(error);
@@ -55,7 +63,7 @@ const AddUser = () => {
 
     useEffect(() => {
         let timerId;
-        if (success && !idFetched) {
+        if (success && !isIdFetched) {
             timerId = setTimeout(() => {
                 setSuccess(false);
             }, 2000);
@@ -66,7 +74,7 @@ const AddUser = () => {
         }
 
         return () => clearTimeout(timerId);
-    }, [success, error, idFetched]);
+    }, [success, error, isIdFetched]);
 
     //Upload img
     const handleImageChange = (e) => {

@@ -10,7 +10,12 @@ html {
 
 body {
     --tw-bg-opacity: 1;
-    background-color: rgb(20 20 32 / var(--tw-bg-opacity));
+    // background-color: rgb(20 20 32 / var(--tw-bg-opacity));
+    background-image: url(../../src/Assets/img/background-home.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    min-height: 100vh;
     // font-family: 'Inter', sans-serif;
     margin: 0;
     line-height: inherit;
@@ -47,16 +52,15 @@ a {
 
 .design-btn {
     padding: 4px;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cebfb1+0,ebe3dd+100 */
-    background: #cebfb1; /* Old browsers */
-    background: -moz-linear-gradient(top, #cebfb1 0%, #ebe3dd 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #cebfb1 0%, #ebe3dd 100%); /* Chrome10-25,Safari5.1-6 */
+    background: #ff00f1;
+    background: linear-gradient(to bottom, #8628b6 0%, #8d26b2 100%);
+    background: linear-gradient(to bottom, #8628b6 0%, #8d26b2 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(
         to bottom,
-        #cebfb1 0%,
-        #ebe3dd 100%
+        #870280 0%,
+        #ff00f1 100%
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebfb1', endColorstr='#ebe3dd',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#870280', endColorstr='#ff00f1',GradientType=0 ); /* IE6-9 */
     border-radius: 16px;
     opacity: 0.9;
     border: solid 1px rgba(255, 255, 255, 0.7);
@@ -71,6 +75,7 @@ a {
 
     .btn-design {
         background: #dcd9d4;
+
         min-width: 45px;
         min-height: 45px;
         display: flex;
@@ -158,6 +163,18 @@ a {
             animation: timeOut 2s linear 1 forwards;
         }
     }
+}
+
+.btn-train-img {
+    background: #fff;
+    color: #000;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 16%;
+    padding: 4px;
+    margin-top: -10px;
+    margin-left: 340px;
+    position: absolute;
 }
 
 @keyframes show {

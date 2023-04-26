@@ -24,7 +24,14 @@ function Home() {
                 <div className="home">
                     <div className="content-home">
                         <div className="content-left">
-                            {isButtonVisible && <img src={CameraImg} alt="camera" onClick={handleButtonClick} className={`open-camera ${isOpen ? 'fade-out' : ''}`} />}
+                            {isButtonVisible && (
+                                <img
+                                    src={CameraImg}
+                                    alt="camera"
+                                    onClick={handleButtonClick}
+                                    className={`open-camera ${isOpen ? 'fade-out' : ''}`}
+                                />
+                            )}
                             <div className={`camera ${isOpen ? 'open-camera-btn' : ''}`}>
                                 <InputEnterIP />
                                 <div className="content-left-camera">

@@ -23,6 +23,7 @@ const UserInformation = () => {
         };
         fetchUser();
     }, [id]);
+
     console.log(userInfo);
     if (!userInfo) {
         return <div>Loading...</div>;
@@ -46,11 +47,23 @@ const UserInformation = () => {
 
                                     {userInfo && (
                                         <div className="info-user">
-                                            <div className="title-in4">ID: {id}</div>
-                                            <div className="title-in4">Name: {userInfo.data.name}</div>
-                                            <div className="title-in4">Skill: {userInfo.data.skill}</div>
-                                            <div className="title-in4">Active: {userInfo.data.active}</div>
-                                            <div className="title-in4">Added: {userInfo.data.added}</div>
+                                            <div className="title-in4">
+                                                ID:
+                                                <span className="content-in4">{id}</span>
+                                            </div>
+                                            <div className="title-in4">
+                                                Name:
+                                                <span className="content-in4">{userInfo.data.name}</span>
+                                            </div>
+                                            <div className="title-in4">
+                                                Skill: <span className="content-in4">{userInfo.data.skill}</span>
+                                            </div>
+                                            <div className="title-in4">
+                                                Active: <span className="content-in4">{userInfo.data.active}</span>
+                                            </div>
+                                            <div className="title-in4">
+                                                Added: <span className="content-in4">{userInfo.data.added}</span>
+                                            </div>
                                         </div>
                                     )}
                                 </div>

@@ -6,15 +6,29 @@
 }
 
 .user-infor {
+    text-align: center;
+    justify-content: center;
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    font-size: 16px;
 
     .user-img {
         img {
             width: 90px;
             height: 90px;
+
+            thead {
+                th {
+                }
+            }
+
+            tbody {
+                td {
+                }
+            }
         }
+    }
+    table {
+        width: 100%;
     }
 
     .user-id {
@@ -28,14 +42,14 @@
 
     .notify-success {
         color: #39e915;
-        font-size: 20px;
-        margin-top: 48px;
-        display: inline-block;
+        font-size: 12px;
+        position: relative;
+        display: flex;
     }
     .notify-error {
         color: #e91c15;
-        font-size: 20px;
-        margin-top: 48px;
-        display: inline-block;
+        font-size: 12px;
+        position: relative;
+        display: flex;
     }
 }

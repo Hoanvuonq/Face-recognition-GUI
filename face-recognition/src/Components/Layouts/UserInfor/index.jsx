@@ -1,86 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircleFilled, WarningFilled } from '@ant-design/icons';
+import { fetchCountTodayScan, fetchData } from '../../../api/api';
 
 // Component
-import Clock from '../../Layouts/Clock';
+// import Clock from '../../Layouts/Clock';
 
 //img
-import Ava from '../../../Assets/img/ava.png';
-import Ava2 from '../../../Assets/img/ava2.png';
+// import Ava from '../../../Assets/img/ava.png';
+// import Ava2 from '../../../Assets/img/ava2.png';
 
 function UserInfor() {
+    const [data, setData] = useState([]);
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        fetchData()
+            .then((response) => {
+                setData(response.data);
+            })
+            .catch((error) => console.log(error));
+    }, []);
+
+    useEffect(() => {
+        fetchCountTodayScan()
+            .then((response) => {
+                setCount(response);
+            })
+            .catch((error) => console.log(error));
+    }, []);
     return (
-        <>
-            <div className="user-infor">
-                <div className="time">
-                    <Clock />
-                </div>
-                <div className="user-img">
-                    <img src={Ava} alt="ava-1" />
-                </div>
-                <div className="user-img">
-                    <img src={Ava2} alt="ava-1" />
-                </div>
-                <div className="user-id">
-                    <p>Tên: Nguyễn Hoàng Vương</p>
-                    <p>ID: 15102002</p>
-                </div>
-                <div className="notify-success">
-                    <CheckCircleFilled />
-                </div>
-            </div>
-            <div className="user-infor">
-                <div className="time">
-                    <Clock />
-                </div>
-                <div className="user-img">
-                    <img src={Ava} alt="ava-1" />
-                </div>
-                <div className="user-img">
-                    <img src={Ava2} alt="ava-1" />
-                </div>
-                <div className="user-id">
-                    <p>Tên: Nguyễn Hoàng Vương</p>
-                    <p>ID: 15102002</p>
-                </div>
-                <div className="notify-success">
-                    <CheckCircleFilled />
-                </div>
-            </div>
-            <div className="user-infor">
-                <div className="time">
-                    <Clock />
-                </div>
-                <div className="user-img">
-                    <img src={Ava} alt="ava-1" />
-                </div>
-                <div className="user-img">
-                    <img src={Ava2} alt="ava-1" />
-                </div>
-                <div className="user-id">
-                    <p>Tên: Nguyễn Hoàng Vương</p>
-                    <p>ID: 15102002</p>
-                </div>
-                <div className="notify-error">
-                    <WarningFilled />
-                </div>
-            </div>
-            <div className="user-infor">
-                <div className="time">
-                    <Clock />
-                </div>
-                <div className="user-img">
-                    <img src={Ava} alt="ava-1" />
-                </div>
-                <div className="user-img">
-                    <img src={Ava2} alt="ava-1" />
-                </div>
-                <div className="user-id">
-                    <p>Tên: Nguyễn Hoàng Vương</p>
-                    <p>ID: 15102002</p>
-                </div>
-            </div>
-        </>
+        <div className="user-infor">
+            {/* <p>Total scans today: {count}</p> */}
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>skill</th>
+                        <th>added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+                        <tr key={item.accs_id}>
+                            <td>{item.accs_prsn}</td>
+                            <td>{item.prs_name}</td>
+                            <td>{item.prs_skill}</td>
+                            <td>{item.accs_added}</td>
+                            <td>
+                                <div className="notify-success">
+                                    <CheckCircleFilled />
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 

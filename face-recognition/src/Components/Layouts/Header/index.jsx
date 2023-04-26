@@ -57,11 +57,6 @@ function HeaderHome() {
                                 </div>
                             </div>
                             <div className="tool">
-                                <div className="search">
-                                    <button className="btn-search">
-                                        <SearchOutlined className="icon-search" />
-                                    </button>
-                                </div>
                                 <Link to={'/'} className="login">
                                     Login
                                 </Link>

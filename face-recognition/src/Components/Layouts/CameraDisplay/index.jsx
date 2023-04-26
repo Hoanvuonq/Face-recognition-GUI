@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import getVideoFeed from '../../../api/api';
 
 const CameraDisplay = () => {
     const [Video, setVideo] = useState('');
@@ -20,13 +21,14 @@ const CameraDisplay = () => {
     return (
         <div className="zone">
             <button className="flicker"></button>
-            <iframe
+            {/* <iframe
                 style={{ width: '100%', height: '100%' }}
-                src={`http://${ip}`}
+                src={'http://localhost:5000/video_feed'}
                 title="Ip Adress"
                 scrolling="no"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
+            ></iframe> */}
+            <img src={'http://localhost:5000/video_feed'} style={{ width: '100%', height: '100%' }} alt="Camera" />
         </div>
     );
 };

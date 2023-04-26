@@ -1,13 +1,5 @@
 .user-infor-page {
-    background-image: url(../../Assets/img/background-home.jpg);
-    padding-top: 100px;
-    padding-bottom: 6rem;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    z-index: 10;
-    overflow: hidden;
-    position: relative;
+    padding-top: 80px;
 
     .user-information {
         width: 100%;
@@ -83,119 +75,10 @@
                             .img-user {
                                 width: 400px;
                                 height: 380px;
+                                border-radius: 50%;
+                                border: 10px solid #b202fb;
                             }
                         }
-
-                        // .inf-upload-img {
-                        //     .inp-upload {
-                        //         position: absolute;
-                        //         width: 1px;
-                        //         height: 1px;
-                        //         padding: 0;
-                        //         margin: -1px;
-                        //         overflow: hidden;
-                        //         clip: rect(0, 0, 0, 0);
-                        //         white-space: nowrap;
-                        //         border-width: 0;
-                        //     }
-                        //     .uploaded-image {
-                        //         .img-upload-success {
-                        //             height: 480px;
-                        //             width: 375px;
-                        //             object-fit: cover;
-                        //         }
-
-                        //         .btn-change {
-                        //             margin-left: 100px;
-                        //             margin-top: 13px;
-                        //             color: #fff;
-                        //             font-weight: 600;
-                        //             display: flex;
-                        //             border: 1px solid #fff;
-                        //             padding: 5px;
-                        //             border-radius: 10px;
-
-                        //             .change-img {
-                        //                 width: 20px;
-                        //                 margin-right: 10px;
-
-                        //                 animation: xoayvong 2s linear 0s infinite;
-                        //                 -webkit-animation: xoayvong 2s linear 0s infinite;
-                        //                 -moz-animation: xoayvong 2s linear 0s infinite;
-                        //                 -o-animation: xoayvong 2s linear 0s infinite;
-                        //             }
-
-                        //             &:hover {
-                        //                 background: #7816b1;
-                        //             }
-                        //         }
-                        //     }
-
-                        //     .label-upload {
-                        //         text-align: center;
-                        //         padding: 3rem;
-                        //         background-color: #632984;
-                        //         --tw-border-opacity: 1;
-                        //         border-color: rgb(161 160 174 / var(--tw-border-opacity));
-                        //         border-style: dashed;
-                        //         border-width: 1px;
-                        //         border-radius: 0.5rem;
-                        //         justify-content: center;
-                        //         align-items: center;
-                        //         min-height: 200px;
-                        //         height: 480px;
-                        //         display: flex;
-                        //         position: relative;
-
-                        //         .conent-upload-file {
-                        //             .upload-file-img {
-                        //                 text-align: center;
-                        //                 margin-bottom: 1rem;
-                        //                 img {
-                        //                     width: 60px;
-                        //                     margin-left: auto;
-                        //                     margin-right: auto;
-                        //                 }
-                        //             }
-
-                        //             .span-title-upload {
-                        //                 --tw-text-opacity: 1;
-                        //                 color: rgb(255 255 255 / var(--tw-text-opacity));
-                        //                 font-weight: 600;
-                        //                 font-size: 1.25rem;
-                        //                 line-height: 1.75rem;
-                        //                 display: block;
-                        //                 margin-bottom: 0.5rem;
-                        //             }
-
-                        //             .span-title-upload-inf-img {
-                        //                 --tw-text-opacity: 1;
-                        //                 color: rgb(161 160 174 / var(--tw-text-opacity));
-                        //                 font-weight: 500;
-                        //                 font-size: 1rem;
-                        //                 line-height: 1.5rem;
-                        //                 display: block;
-                        //                 margin-bottom: 0.75rem;
-                        //             }
-
-                        //             .span-browse {
-                        //                 --tw-text-opacity: 1;
-                        //                 color: rgb(20 20 32 / var(--tw-text-opacity));
-                        //                 font-weight: 600;
-                        //                 font-size: 1rem;
-                        //                 line-height: 1.5rem;
-                        //                 padding-left: 1.25rem;
-                        //                 padding-right: 1.25rem;
-                        //                 padding-top: 0.5rem;
-                        //                 padding-bottom: 0.5rem;
-                        //                 --tw-bg-opacity: 1;
-                        //                 background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-                        //                 border-radius: 0.25rem;
-                        //                 display: inline-flex;
-                        //             }
-                        //         }
-                        //     }
-                        // }
                     }
 
                     .user-content-right {
@@ -228,12 +111,11 @@
                             font-size: 16px;
                             padding: 40px;
 
-                            tbody {
-                                tr {
-                                    // display: flex;
+                            .title-in4 {
+                                margin: 10px 0;
 
-                                    td {
-                                    }
+                                .content-in4 {
+                                    margin-left: 10px;
                                 }
                             }
                         }
