@@ -60,7 +60,7 @@ function Login() {
                                     </Link>
                                 </div>
 
-                                <Link className="link-btn-sig" to={'/Home'}>
+                                <Link className="link-btn-sig" to={'/CameraLive'}>
                                     <button className="btn-submit">Sign in</button>
                                 </Link>
                             </form>
