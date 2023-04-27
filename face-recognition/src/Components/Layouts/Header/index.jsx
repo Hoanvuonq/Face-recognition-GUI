@@ -45,7 +45,7 @@ function HeaderHome() {
                                 <div className="list-menu">
                                     <ul className="ul-menu">
                                         <li>
-                                            <Link to={'/Home'}>Camera Live</Link>
+                                            <Link to={'/CameraLive'}>Camera Live</Link>
                                         </li>
                                         <li>
                                             <Link to={'/CameraCheckUnknow'}>Camera Check</Link>
