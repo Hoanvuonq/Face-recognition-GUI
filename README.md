@@ -12,8 +12,13 @@ In the project directory, you can run:
 
 If there is an error message when npm install, use the command
 ### `npm install --save --legacy-peer-deps`  
-==> my own experience
 
+
+then run npm start again
+### `npm start`
+
+ ------------------------ Good Luck ----------------------------
+ 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
