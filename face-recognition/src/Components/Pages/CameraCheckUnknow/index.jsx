@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 // Component
-// import UserInfor from '../../Layouts/UserInfor';
 import HeaderHome from '../../Layouts/Header';
 import CameraCheckUnk from '../../Layouts/CameraCheckUnk';
 import InputEnterIP from '../../Layouts/InputEnterIP';
-import { fetchCheckUnknown, fetchUnknownImage } from '../../../api/api';
+import { fetchCheckUnknown } from '../../../api/api';
 
 // Img
 import CameraImg from '../../../Assets/img/camera-open.svg';
@@ -20,6 +19,14 @@ function CameraCheckUnknow() {
         fetchCheckUnknown()
             .then((images) => setUnknownImages(images))
             .catch((error) => console.error(error));
+
+        const interval = setInterval(() => {
+            fetchCheckUnknown()
+                .then((images) => setUnknownImages(images))
+                .catch((error) => console.error(error));
+        }, 1000);
+
+        return () => clearInterval(interval);
     }, []);
 
     const handleImageClick = (image) => {
