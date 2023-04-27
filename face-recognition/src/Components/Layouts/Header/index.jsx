@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Header } from 'antd/es/layout/layout';
 import { Link } from 'react-router-dom';
-import { SearchOutlined } from '@ant-design/icons';
+// import { SearchOutlined } from '@ant-design/icons';
 
 // Images
 import Logo from '../../../Assets/img/logo-camera.png';
@@ -45,7 +45,10 @@ function HeaderHome() {
                                 <div className="list-menu">
                                     <ul className="ul-menu">
                                         <li>
-                                            <Link to={'/Home'}>Home</Link>
+                                            <Link to={'/Home'}>Camera Live</Link>
+                                        </li>
+                                        <li>
+                                            <Link to={'/CameraCheckUnknow'}>Camera Check</Link>
                                         </li>
                                         <li>
                                             <Link to={'/ListUser'}>List User</Link>

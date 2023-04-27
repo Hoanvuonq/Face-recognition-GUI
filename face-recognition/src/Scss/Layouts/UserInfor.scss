@@ -9,26 +9,37 @@
     text-align: center;
     justify-content: center;
     display: flex;
-    font-size: 16px;
+    font-size: 18px;
 
     .user-img {
         img {
             width: 90px;
             height: 90px;
-
-            thead {
-                th {
-                }
-            }
-
-            tbody {
-                td {
-                }
-            }
         }
     }
     table {
         width: 100%;
+        thead {
+            th {
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid #060404;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                width: 443px;
+            }
+            .hr-item {
+                width: 379px;
+                height: 1px;
+                position: absolute;
+                color: #000;
+                background: #000;
+                position: relative;
+            }
+        }
     }
 
     .user-id {

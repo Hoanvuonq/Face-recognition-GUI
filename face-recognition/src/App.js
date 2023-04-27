@@ -5,6 +5,7 @@ import './Scss/main.scss';
 
 // Components //
 import Home from './Components/Pages/Home';
+import CameraCheckUnknow from './Components/Pages/CameraCheckUnknow';
 import Login from './Components/Pages/Login';
 import Register from './Components/Pages/Register';
 import UserInformation from './Components/Pages/UserInformation';
@@ -22,7 +23,8 @@ function App() {
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path="/Home" element={<Home />} />
+                    <Route exact path="/CameraLive" element={<Home />} />
+                    <Route exact path="/CameraCheckUnknow" element={<CameraCheckUnknow />} />
                     <Route exact path="/" element={<Login />} />
                     <Route exact path="/Register" element={<Register />} />
                     <Route exact path="/UserInfor/:id" element={<UserInformation />} />

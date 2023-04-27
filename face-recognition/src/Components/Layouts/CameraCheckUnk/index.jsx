@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import getVideoFeed from '../../../api/api';
 
-const CameraDisplay = () => {
+const CameraCheckUnk = () => {
     const [Video, setVideo] = useState('');
     const ip = useSelector((state) => state.ip);
 
@@ -21,9 +21,9 @@ const CameraDisplay = () => {
     return (
         <div className="zone">
             <button className="flicker" />
-            <img src={'http://localhost:5000/video_feed'} style={{ width: '100%', height: '100%' }} alt="Camera" />
+            <img src={'http://localhost:5000/video_checkface'} style={{ width: '100%', height: '100%' }} alt="Camera" />
         </div>
     );
 };
 
-export default CameraDisplay;
+export default CameraCheckUnk;

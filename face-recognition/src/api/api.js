@@ -130,3 +130,17 @@ const getVideoFeed = ({ onSuccess, onError }) => {
         });
 };
 export default getVideoFeed;
+
+export const fetchCheckUnknown = () => {
+    return axios
+        .get(`${API_URL}/api/check-unknow`)
+        .then((response) => response.data)
+        .catch((error) => console.error(error));
+};
+
+export const fetchUnknownImage = (imageUrl) => {
+    return axios
+        .get(`${API_URL}${imageUrl}`, { responseType: 'blob' })
+        .then((response) => URL.createObjectURL(response.data))
+        .catch((error) => console.error(error));
+};

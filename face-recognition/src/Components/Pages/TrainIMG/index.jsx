@@ -81,12 +81,14 @@ const TrainIMG = () => {
                         </div>
                     </div>
 
-                    <div className="content-righ">
+                    <div className="content-right">
                         <button className="btn-train-img" onClick={handleTrainImage}>
                             Train Image
                         </button>
                         <form onSubmit={handleSubmit}>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className="submit-trainimg">
+                                Submit
+                            </button>
                         </form>
                     </div>
                 </div>

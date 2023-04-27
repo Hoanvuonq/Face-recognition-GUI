@@ -36,25 +36,27 @@ function UserInfor() {
                     <tr>
                         <th>id</th>
                         <th>name</th>
-                        <th>skill</th>
                         <th>added</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map((item) => (
-                        <tr key={item.accs_id}>
-                            <td>{item.accs_prsn}</td>
-                            <td>{item.prs_name}</td>
-                            <td>{item.prs_skill}</td>
-                            <td>{item.accs_added}</td>
-                            <td>
-                                <div className="notify-success">
-                                    <CheckCircleFilled />
-                                </div>
-                            </td>
-                        </tr>
+                        <>
+                            <tr className="render-item" key={item.accs_id}>
+                                <td>{item.accs_prsn}</td>
+                                <td>{item.prs_name}</td>
+                                <td>{item.accs_added}</td>
+                                <td>
+                                    <div className="notify-success">
+                                        <CheckCircleFilled />
+                                    </div>
+                                </td>
+                            </tr>
+                            {/* <hr className="hr-item" /> */}
+                        </>
                     ))}
                 </tbody>
+                <hr />
             </table>
         </div>
     );

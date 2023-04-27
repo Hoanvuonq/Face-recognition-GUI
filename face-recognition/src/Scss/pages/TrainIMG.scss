@@ -132,16 +132,47 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
                 width: 100%;
-                background: rgb(165, 79, 226);
-                background: linear-gradient(118deg, rgba(165, 79, 226, 1) 30%, rgba(255, 15, 242, 1) 68%);
-                height: 500px;
-                border-radius: 50px;
+                // background: rgb(165, 79, 226);
+                // background: linear-gradient(118deg, rgba(165, 79, 226, 1) 30%, rgba(255, 15, 242, 1) 68%);
+                // height: 500px;
+                // border-radius: 50px;
                 padding: 20px;
                 flex-direction: column;
                 display: flex;
 
                 @include MinWidth992 {
                     width: 32%;
+                }
+
+                .submit-trainimg {
+                    border: 1px solid #f11cf9;
+                    padding: 10px;
+                    border-radius: 12px;
+                    background: #df2bd2;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 600;
+
+                    &:hover {
+                        background: #ab009f !important;
+                    }
+                }
+
+                .btn-train-img {
+                    border: 1px solid #f11cf9;
+                    padding: 10px;
+                    border-radius: 12px;
+                    background: #df2bd2;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    margin-left: 100px;
+                    position: absolute;
+
+                    &:hover {
+                        background: #ab009f;
+                    }
                 }
             }
         }
